@@ -1,0 +1,35 @@
+/* Core app styles for sidebar layout */
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0}
+.layout-shell{display:flex;min-height:100vh}
+.sidebar{width:260px;background:#111827;color:#fff;padding:20px;transition:width .18s ease}
+.sidebar.collapsed{width:72px;padding-left:8px;padding-right:8px}
+.sidebar.collapsed .s-label{display:none}
+.sidebar.collapsed .badge{display:none}
+.sidebar.collapsed .s-icon{display:inline-block;margin:0 auto;}
+.sidebar a{display:flex;align-items:center;gap:10px;justify-content:flex-start}
+.sidebar.collapsed a{justify-content:center}
+#sidebar-toggle{background:none;border:none;color:#d1d5db;cursor:pointer;padding:6px;border-radius:6px}
+#sidebar-toggle:focus{outline:2px solid #fff}
+
+.sidebar h2{font-size:18px;margin:0 0 12px}
+.sidebar a{display:flex;justify-content:space-between;align-items:center;color:#d1d5db;padding:10px;border-radius:6px;text-decoration:none;margin-bottom:6px}
+.sidebar a:hover{background:#0b1220;color:#fff}
+.badge{background:#ef4444;color:#fff;padding:2px 8px;border-radius:12px;font-size:12px}
+.content-wrap{flex:1;padding:24px;background:#f3f4f6}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;background:#fff;border-bottom:1px solid #e5e7eb}
+.alert{padding:10px;border-radius:4px;margin-bottom:12px}
+.alert-error{background:#fee2e2;color:#991b1b}
+.alert-success{background:#ecfdf5;color:#065f46}
+/* smaller responsive */
+@media(max-width:800px){.sidebar{display:none}.content-wrap{padding:12px}}
+
+/* Branch compact default: show icons-only, smaller width */
+.sidebar.branch-compact{width:72px;padding-left:8px;padding-right:8px}
+.sidebar.branch-compact .s-label{display:none}
+.sidebar.branch-compact .badge{display:none}
+.sidebar.branch-compact a{justify-content:center}
+.sidebar.branch-compact .s-icon{display:inline-block;margin:0 auto}
+
+/* Ensure collapsed and branch-compact are visually coherent */
+.sidebar.branch-compact.collapsed{width:72px}
+.sidebar.branch-compact.collapsed a{justify-content:center} 
